@@ -20,7 +20,7 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Lang
 The main entry point is `answer_generation.py`. You can run it directly:
 
 ```bash
-/Users/sidrocks/.gemini/antigravity-ide/scratch/mm_rag/.venv/bin/python /Users/sidrocks/.gemini/antigravity-ide/scratch/mm_rag/answer_generation.py
+python answer_generation.py
 ```
 
 ## Configuration
