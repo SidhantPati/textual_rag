@@ -82,7 +82,7 @@ def evaluate_all_retrieval(k):
         result = evaluate_retrieval(test, k)
         all_results.append(result)
         progress = (index+1)/total_tests
-        print(f"🔁Progress: {progress*100}% ---> mrr: {result.mrr} | ndcg: {result.ndcg} | keyword_coverage: {result.keyword_coverage} | Q: {test.question}")
+        print(f"🔁Progress: {progress*100}% ---> mrr: {result.mrr:.4f} | ndcg: {result.ndcg:.4f} | keyword_coverage: {100*result.keyword_coverage:.2f} | Q: {test.question}")
         # yield test, result, progress
     
     # Calculate overall metrics across all test questions
