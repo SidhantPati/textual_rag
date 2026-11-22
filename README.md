@@ -1,8 +1,8 @@
-# RAG Chat Application
+# 🚀 RAG Chat Application
 
 This project implements a Retrieval-Augmented Generation (RAG) system using LangChain, ChromaDB, and Google Gemini based on fictional insurance company, InsureLLM (inspired from Ed Donner's "AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents" course on Udemy).
 
-## Features
+## ✅ Features
 
 - **RAG Pipeline**: Retrieves relevant document chunks to augment LLM responses
 - **ChromaDB**: Vector database for storing and searching document embeddings
@@ -10,12 +10,7 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Lang
 - **Chat History**: Maintains conversation history for context-aware responses
 - **Environment Management**: Secure API key management using `python-dotenv`
 
-## Prerequisites
-
-- Python 3.9+
-- Google Gemini API Key
-
-## Usage
+## ✅ Usage
 
 The main entry point is `main.py`, which includes gradio based UI which helps to drive conversationa and also check the retrieved_context docs for reference. You can run it directly:
 
@@ -35,15 +30,7 @@ To re-factor embedding ingestion pipeline into chroma vector db, use use `vector
 python vector_ingestion.py
 ```
 
-## Configuration
-
-The following constants can be adjusted in `answer_generation.py`:
-
-- `gemini_model`: The Gemini model to use for chat responses (default: `"gemini-3.5-flash-lite"`)
-- `text_embedding_model`: The HuggingFace model for embeddings (default: `"BAAI/bge-large-en-v1.5"`)
-- `vector_db_name`: Directory for ChromaDB persistence (default: `"chroma_vector_db"`)
-
-## Evaluation Metrics
+## ✅ Evaluation Metrics
 
 Evaluation script is `evalaution/test1_eval.py`. You can run it directly:
 
@@ -72,7 +59,7 @@ Based on 150 test questions, the base retrieval model registered the following m
 | Overall NDCG@3 | 0.8739 |
 | Overall Keyword Coverage | 91.41% |
 
-## Project Structure
+## ✅ Project Structure
 
 ```
 textual_rag/
@@ -96,7 +83,23 @@ textual_rag/
 └── README.md               # Project documentation
 ```
 
-## Troubleshooting
+## ✅ Getting Started
+
+### Prerequisites
+
+- Python 3.9+
+- ChromaDB
+- Google Gemini API Key
+
+### Installation & Execution
+1. Clone the repository and install requirements.
+2. Create a `.env` file in the root directory and add your API keys.
+3. **Build the Vector DB:**
+   Run `python vector_ingestion.py` to trigger the LLM-driven semantic chunking and store embedding into the local ChromaDB.
+4. **Run Evaluations:**
+   Run `python evaluation/test1_eval.py` to launch the cli based evaluation and run the comprehensive test suite.
+
+### Troubleshooting
 
 - **API Key Issues**: Ensure `GOOGLE_API_KEY` is set in your `.env` file and that you have access to the specified Gemini model.
 - **ChromaDB Not Found**: Run `vector_ingestion.py` first to populate the vector database.
