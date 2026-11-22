@@ -1,6 +1,6 @@
 # 🚀 RAG Chat Application
 
-This project implements a Retrieval-Augmented Generation (RAG) system using LangChain, ChromaDB, and Google Gemini based on fictional insurance company, InsureLLM (inspired from Ed Donner's "AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents" course on Udemy).
+This project implements a Retrieval-Augmented Generation (RAG) system for a fictional insurance company, InsureLLM (inspired from Ed Donner's "AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents" course on Udemy). The system uses following tech stack (LangChain, ChromaDB, and Google Gemini API) to drive end-to-end RAG implementation.
 
 ## ✅ Features
 
