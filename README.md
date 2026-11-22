@@ -1,6 +1,6 @@
 # RAG Chat Application
 
-This project implements a Retrieval-Augmented Generation (RAG) system using LangChain, ChromaDB, and Google Gemini.
+This project implements a Retrieval-Augmented Generation (RAG) system using LangChain, ChromaDB, and Google Gemini based on fictional insurance company, InsureLLM (inspired from Ed Donner's "AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents" course on Udemy).
 
 ## Features
 
@@ -17,10 +17,22 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Lang
 
 ## Usage
 
-The main entry point is `answer_generation.py`. You can run it directly:
+The main entry point is `main.py`, which includes gradio based UI which helps to drive conversationa and also check the retrieved_context docs for reference. You can run it directly:
+
+```bash
+python main.py
+```
+
+To drive 1:1 LLM call, use `answer_generation.py`. You can run it directly:
 
 ```bash
 python answer_generation.py
+```
+
+To re-factor embedding ingestion pipeline into chroma vector db, use use `vector_ingestion.py`. You can run it directly:
+
+```bash
+python vector_ingestion.py
 ```
 
 ## Configuration
@@ -31,14 +43,48 @@ The following constants can be adjusted in `answer_generation.py`:
 - `text_embedding_model`: The HuggingFace model for embeddings (default: `"BAAI/bge-large-en-v1.5"`)
 - `vector_db_name`: Directory for ChromaDB persistence (default: `"chroma_vector_db"`)
 
+## Evaluation Metrics
+
+Evaluation script is `evalaution/test1_eval.py`. You can run it directly:
+
+```bash
+python -m evaluation.test1_eval
+```
+
+### Answer Module (LLM-as-a-Judge):
+
+Based on 150 test questions, the base Answer model registered the following metrics, as evaluated via LLM-as-a-Judge framework.
+
+| Metric | Score |
+|---|---:|
+| Overall Accuracy | 4.57 / 5.00 |
+| Overall Completeness | 4.38 / 5.00 |
+| Overall Relevance | 4.25 / 5.00 |
+
+
+### Retrieval Module:
+
+Based on 150 test questions, the base retrieval model registered the following metrics.
+
+| Metric | Score |
+|---|---:|
+| Overall MRR@3 | 0.8669 |
+| Overall NDCG@3 | 0.8739 |
+| Overall Keyword Coverage | 91.41% |
+
 ## Project Structure
 
 ```
-mm_rag/
+textual_rag/
 ├── .env                    # Environment variables (not in git)
 ├── .venv/                  # Python virtual environment
-├── answer_generation.py    # Main RAG application
+├── main.py                 # Main RAG application (Chat UI)
+├── answer_generation.py    # RAG Response Generation Module
 ├── vector_ingestion.py     # Document Ingestion into ChromaDB Vector db
+├── evaluation/             # Conduct evaluation
+│   ├── test1.jsonl
+│   ├── test1_obj.py
+│   └── test1_eval.py
 ├── knowledge-base/         # Document source files
 │   ├── company
 │       ├── about.md
@@ -49,22 +95,6 @@ mm_rag/
 │   └── products
 └── README.md               # Project documentation
 ```
-
-## Development
-
-### Embedding Documents
-
-To embed documents and populate the vector database, run:
-
-```bash
-/Users/sidrocks/.gemini/antigravity-ide/scratch/mm_rag/.venv/bin/python /Users/sidrocks/.gemini/antigravity-ide/scratch/mm_rag/embedding.py
-```
-
-This will:
-1.  Read `.md` files from the `knowledge-base/*` directory
-2.  Split them into manageable chunks
-3.  Generate embeddings using `BAAI/bge-large-en-v1.5`
-4.  Store them in `chroma_vector_db/`
 
 ## Troubleshooting
 
