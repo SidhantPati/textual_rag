@@ -1,0 +1,158 @@
+========== OVERALL BASE RETRIEVAL EVALUATION ==========
+Total test questions: 150
+Overall MRR@3: 0.8669
+Overall NDCG@3: 0.8739
+Overall Keyword Coverage: 91.41%
+
+========== DETAILED QUESTION WISE EVALUATION ==========
+
+🔁Progress: 0.67% ---> mrr: 0.0000 | ndcg: 0.0000 | keyword_coverage: 0.00 | Q: Who won the prestigious IIOTY award in 2023?
+🔁Progress: 1.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When was Insurellm founded?
+🔁Progress: 2.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: Who founded Insurellm?
+🔁Progress: 2.67% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: How many employees does Insurellm currently have?
+🔁Progress: 3.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What was Insurellm's first product?
+🔁Progress: 4.00% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: How many active contracts does Insurellm manage?
+🔁Progress: 4.67% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: Where is Insurellm's headquarters located?
+🔁Progress: 5.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How many office locations does Insurellm maintain?
+🔁Progress: 6.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Insurellm's vision statement?
+🔁Progress: 6.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How many Bizllm contracts has Insurellm secured?
+🔁Progress: 7.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How many Claimllm contracts does Insurellm have?
+🔁Progress: 8.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How many life insurance contracts has Lifellm secured?
+🔁Progress: 8.67% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: How many health insurance contracts does Healthllm have?
+🔁Progress: 9.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the monthly cost of Carllm's Basic Tier?
+🔁Progress: 10.00% ---> mrr: 1.0000 | ndcg: 0.9465 | keyword_coverage: 100.00 | Q: What is the monthly cost of Carllm's Enterprise Tier?
+🔁Progress: 10.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the monthly cost of Homellm's Standard Tier?
+🔁Progress: 11.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the monthly cost of Bizllm's Professional Tier?
+🔁Progress: 12.00% ---> mrr: 1.0000 | ndcg: 0.9732 | keyword_coverage: 100.00 | Q: What is the monthly cost of Claimllm's Core Tier?
+🔁Progress: 12.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the monthly cost of Healthllm's Essential Tier?
+🔁Progress: 13.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the monthly cost of Lifellm's Starter Tier?
+🔁Progress: 14.00% ---> mrr: 0.4444 | ndcg: 0.6290 | keyword_coverage: 100.00 | Q: What is the monthly cost of Rellm's Basic Plan?
+🔁Progress: 14.67% ---> mrr: 0.7500 | ndcg: 0.8155 | keyword_coverage: 100.00 | Q: What is Maxine Thompson's current job title?
+🔁Progress: 15.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Maxine Thompson's current salary?
+🔁Progress: 16.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: Where is Maxine Thompson located?
+🔁Progress: 16.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Avery Lancaster's job title?
+🔁Progress: 17.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Avery Lancaster's current salary?
+🔁Progress: 18.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is James Wilson's job title?
+🔁Progress: 18.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is James Wilson's current salary?
+🔁Progress: 19.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Priya Sharma's job title?
+🔁Progress: 20.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Priya Sharma's current salary?
+🔁Progress: 20.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Robert Chen's job title?
+🔁Progress: 21.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Robert Chen's current salary?
+🔁Progress: 22.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: Which product does Robert Chen serve as technical lead for?
+🔁Progress: 22.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is David Kim's job title?
+🔁Progress: 23.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Sarah Williams's job title?
+🔁Progress: 24.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: Which product does Sarah Williams lead design for?
+🔁Progress: 24.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Marcus Johnson's job title?
+🔁Progress: 25.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Marcus Johnson's client retention rate?
+🔁Progress: 26.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Lisa Anderson's job title?
+🔁Progress: 26.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the size of Lisa Anderson's annual marketing budget?
+🔁Progress: 27.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Emily Carter's job title?
+🔁Progress: 28.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the contract number for DriveSmart Insurance's Carllm agreement?
+🔁Progress: 28.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the duration of the DriveSmart Insurance Carllm contract?
+🔁Progress: 29.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the total contract value for DriveSmart Insurance's Carllm agreement?
+🔁Progress: 30.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How many active auto policies does DriveSmart Insurance have?
+🔁Progress: 30.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the uptime SLA guarantee for DriveSmart Insurance?
+🔁Progress: 31.33% ---> mrr: 0.7500 | ndcg: 0.8155 | keyword_coverage: 100.00 | Q: Who signed the DriveSmart Insurance contract on behalf of Insurellm?
+🔁Progress: 32.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the monthly payment for Greenstone Insurance's Homellm contract?
+🔁Progress: 32.67% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: What tier did Harmony Health Plans subscribe to for Healthllm?
+🔁Progress: 33.33% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: What is the monthly cost for Harmony Health Plans' Healthllm subscription?
+🔁Progress: 34.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How many covered members does Harmony Health Plans have?
+🔁Progress: 34.67% ---> mrr: 0.7500 | ndcg: 0.8155 | keyword_coverage: 100.00 | Q: Who signed the Harmony Health Plans contract on behalf of Insurellm?
+🔁Progress: 35.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the contract number for Metropolitan Life Group's Lifellm agreement?
+🔁Progress: 36.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the total contract value for Metropolitan Life Group's Lifellm agreement?
+🔁Progress: 36.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How many active policies does Metropolitan Life Group manage?
+🔁Progress: 37.33% ---> mrr: 0.7500 | ndcg: 0.8155 | keyword_coverage: 100.00 | Q: Who signed the Metropolitan Life Group contract on behalf of the client?
+🔁Progress: 38.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What tier did FastTrack Insurance Services subscribe to for Claimllm?
+🔁Progress: 38.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the monthly payment for FastTrack Insurance Services' Claimllm contract?
+🔁Progress: 39.33% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: What is the duration of the FastTrack Insurance Services contract?
+🔁Progress: 40.00% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: Who signed the FastTrack Insurance Services contract on behalf of Insurellm?
+🔁Progress: 40.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What tier did Atlantic Risk Solutions subscribe to for Bizllm?
+🔁Progress: 41.33% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: What is the monthly cost for Atlantic Risk Solutions' Bizllm subscription?
+🔁Progress: 42.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How many user licenses are included in Atlantic Risk Solutions' contract?
+🔁Progress: 42.67% ---> mrr: 0.7500 | ndcg: 0.8155 | keyword_coverage: 100.00 | Q: Who signed the Atlantic Risk Solutions contract on behalf of Insurellm?
+🔁Progress: 43.33% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: What is the monthly fee for Belvedere Insurance's Markellm listing?
+🔁Progress: 44.00% ---> mrr: 0.6667 | ndcg: 0.7500 | keyword_coverage: 100.00 | Q: When did Maxine Thompson join Insurellm?
+🔁Progress: 44.67% ---> mrr: 1.0000 | ndcg: 0.9732 | keyword_coverage: 100.00 | Q: When did James Wilson join Insurellm?
+🔁Progress: 45.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When did Insurellm reach its peak of 200 employees?
+🔁Progress: 46.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When did Insurellm undergo strategic restructuring?
+🔁Progress: 46.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When is Carllm's telematics-based pricing feature scheduled to launch?
+🔁Progress: 47.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When is Homellm version 2.0 scheduled for release?
+🔁Progress: 48.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When is Bizllm version 1.0 scheduled to launch?
+🔁Progress: 48.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When is Claimllm version 1.0 scheduled to launch?
+🔁Progress: 49.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When is Lifellm version 1.0 scheduled to launch?
+🔁Progress: 50.00% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: When is Healthllm version 1.0 scheduled to launch?
+🔁Progress: 50.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When was the DriveSmart Insurance contract for Carllm signed?
+🔁Progress: 51.33% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: When was the Harmony Health Plans Healthllm contract effective?
+🔁Progress: 52.00% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: When was the Metropolitan Life Group Lifellm contract signed?
+🔁Progress: 52.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When was the FastTrack Insurance Services Claimllm contract signed?
+🔁Progress: 53.33% ---> mrr: 1.0000 | ndcg: 0.9197 | keyword_coverage: 100.00 | Q: When was the Atlantic Risk Solutions Bizllm contract effective?
+🔁Progress: 54.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How much did Priya Sharma's recommendation engine increase conversion by for Marketllm?
+🔁Progress: 54.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: By what percentage did David Kim reduce deployment time with CI/CD pipelines?
+🔁Progress: 55.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: By what percentage did Sarah Williams improve user satisfaction scores?
+🔁Progress: 56.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: By what percentage has Lisa Anderson increased qualified leads since 2021?
+🔁Progress: 56.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: By what percentage did Emily Carter exceed her annual sales target in 2022?
+🔁Progress: 57.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the performance-based pricing for Belvedere Insurance's Markellm contract?
+🔁Progress: 58.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the monthly cost for Stellar Insurance Co.'s Rellm subscription?
+🔁Progress: 58.67% ---> mrr: 0.3333 | ndcg: 0.3333 | keyword_coverage: 33.33 | Q: What are Insurellm's four core values?
+🔁Progress: 59.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What award did Alex Harper win in 2022?
+🔁Progress: 60.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When was the Stellar Insurance Co. Rellm contract effective?
+🔁Progress: 60.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How many claims does FastTrack Insurance Services project for year 1?
+🔁Progress: 61.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How much annual revenue does Marcus Johnson's portfolio generate?
+🔁Progress: 62.00% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: What percentage of quota did Jennifer Adams achieve in 2023?
+🔁Progress: 62.67% ---> mrr: 0.5000 | ndcg: 0.6309 | keyword_coverage: 100.00 | Q: How many products does Insurellm offer?
+🔁Progress: 63.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the monthly cost of Carllm's Professional Tier?
+🔁Progress: 64.00% ---> mrr: 0.5000 | ndcg: 0.6309 | keyword_coverage: 100.00 | Q: What are the core insurance portals offered by Insurellm?
+🔁Progress: 64.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What are the marketplace and infrastructure products offered by Insurellm?
+🔁Progress: 65.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: Which product does Jessica Liu develop for?
+🔁Progress: 66.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Tyler Brooks's job title?
+🔁Progress: 66.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: Which product does Tyler Brooks work on?
+🔁Progress: 67.33% ---> mrr: 0.7500 | ndcg: 0.7500 | keyword_coverage: 75.00 | Q: What is the job title of the IIOTY award winner?
+🔁Progress: 68.00% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: Who is the technical lead for the product that costs $10,000/month for Standard Tier?
+🔁Progress: 68.67% ---> mrr: 0.2500 | ndcg: 0.2500 | keyword_coverage: 25.00 | Q: What is the salary of the CTO who joined in January 2017?
+🔁Progress: 69.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the current salary of the founder of Insurellm?
+🔁Progress: 70.00% ---> mrr: 0.3333 | ndcg: 0.5000 | keyword_coverage: 100.00 | Q: Which product did the Senior Data Scientist build a recommendation engine for that increased conversion by 28%?
+🔁Progress: 70.67% ---> mrr: 0.0833 | ndcg: 0.1250 | keyword_coverage: 25.00 | Q: Which product does the UX Designer who improved user satisfaction by 35% lead design for?
+🔁Progress: 71.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the annual marketing budget managed by the Marketing Manager in Austin?
+🔁Progress: 72.00% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: Who signed the contract on behalf of Insurellm for the client that pays $18,000 per month for Carllm?
+🔁Progress: 72.67% ---> mrr: 0.6000 | ndcg: 0.7047 | keyword_coverage: 100.00 | Q: What tier did the client with 35 user licenses subscribe to for Bizllm?
+🔁Progress: 73.33% ---> mrr: 0.6000 | ndcg: 0.7172 | keyword_coverage: 100.00 | Q: How many covered members does the client who subscribed to Healthllm Professional Tier for $15,000/month have?
+🔁Progress: 74.00% ---> mrr: 0.6000 | ndcg: 0.7047 | keyword_coverage: 100.00 | Q: Who signed the Metropolitan Life Group contract that totals $1,098,000?
+🔁Progress: 74.67% ---> mrr: 0.3333 | ndcg: 0.3750 | keyword_coverage: 50.00 | Q: What is the total contract value for the client paying $12,000 per month for Bizllm Professional Tier?
+🔁Progress: 75.33% ---> mrr: 0.6250 | ndcg: 0.7232 | keyword_coverage: 100.00 | Q: By what percentage did the DevOps Engineer in New York reduce deployment time?
+🔁Progress: 76.00% ---> mrr: 1.0000 | ndcg: 0.9799 | keyword_coverage: 100.00 | Q: What is the annual revenue generated by the portfolio managed by the Customer Success Manager in New York?
+🔁Progress: 76.67% ---> mrr: 1.0000 | ndcg: 0.9839 | keyword_coverage: 100.00 | Q: By what percentage did the Account Executive in Austin exceed their annual sales target in 2022?
+🔁Progress: 77.33% ---> mrr: 0.7500 | ndcg: 0.7500 | keyword_coverage: 75.00 | Q: When is the telematics-based pricing feature scheduled to launch for the product that costs $1,000/month for Basic Tier?
+🔁Progress: 78.00% ---> mrr: 0.6667 | ndcg: 0.6131 | keyword_coverage: 66.67 | Q: What is the monthly cost for the Basic Listing Fee on the marketplace that was Insurellm's first product?
+🔁Progress: 78.67% ---> mrr: 0.7000 | ndcg: 0.6941 | keyword_coverage: 80.00 | Q: How many core values does the company founded by Avery Lancaster have?
+🔁Progress: 79.33% ---> mrr: 0.7500 | ndcg: 0.7500 | keyword_coverage: 75.00 | Q: What tier of Healthllm costs $15,000 per month and includes Advanced Medication Management?
+🔁Progress: 80.00% ---> mrr: 0.3000 | ndcg: 0.3262 | keyword_coverage: 40.00 | Q: How many active policies does the client who pays $28,000 per month for Lifellm manage?
+🔁Progress: 80.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Alex Chen's current job title?
+🔁Progress: 81.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Carlos Rodriguez's current salary?
+🔁Progress: 82.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the monthly cost of the Bizllm Business Tier?
+🔁Progress: 82.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is Nina Patel's job title?
+🔁Progress: 83.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the contract number for the GreenValley Insurance Homellm agreement?
+🔁Progress: 84.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When did Alex Chen join Insurellm?
+🔁Progress: 84.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When was the GreenValley Insurance Homellm contract signed?
+🔁Progress: 85.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When was the Summit Commercial Insurance Bizllm contract effective?
+🔁Progress: 86.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When was the Roadway Insurance Carllm contract effective?
+🔁Progress: 86.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: When was the Evergreen Life Insurance Lifellm contract signed?
+🔁Progress: 87.33% ---> mrr: 0.6667 | ndcg: 0.6667 | keyword_coverage: 66.67 | Q: How many employees did Insurellm have at its peak in 2020?
+🔁Progress: 88.00% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: What is the monthly cost for Apex Reinsurance's Rellm subscription?
+🔁Progress: 88.67% ---> mrr: 1.0000 | ndcg: 0.9599 | keyword_coverage: 100.00 | Q: How many active policies does Evergreen Life Insurance currently manage?
+🔁Progress: 89.33% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: How many user licenses are provided for onboarding training in the Summit Commercial Insurance contract?
+🔁Progress: 90.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: How much new business did Michael O'Brien generate over the past 3 years?
+🔁Progress: 90.67% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: Which product does Rachel Martinez lead product strategy for?
+🔁Progress: 91.33% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: Which mobile app does Kevin Zhang lead iOS development for?
+🔁Progress: 92.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: Which tier of Bizllm did Summit Commercial Insurance subscribe to?
+🔁Progress: 92.67% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: What award did Carlos Rodriguez win in 2023?
+🔁Progress: 93.33% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: Who signed the Summit Commercial Insurance contract on behalf of Insurellm?
+🔁Progress: 94.00% ---> mrr: 0.7500 | ndcg: 0.8155 | keyword_coverage: 100.00 | Q: How many employees at Insurellm have a current salary under $80,000?
+🔁Progress: 94.67% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: What is the total contract value of all Healthllm contracts combined?
+🔁Progress: 95.33% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: Which product line has the most active contracts according to the company overview?
+🔁Progress: 96.00% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: How many total employees work at Insurellm across all locations?
+🔁Progress: 96.67% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: What is the average monthly subscription cost across all Carllm contracts?
+🔁Progress: 97.33% ---> mrr: 0.3333 | ndcg: 0.5000 | keyword_coverage: 100.00 | Q: How many different insurance product lines does Insurellm offer in total?
+🔁Progress: 98.00% ---> mrr: 0.5000 | ndcg: 0.4599 | keyword_coverage: 50.00 | Q: Which product has the fewest active contracts according to the portfolio breakdown?
+🔁Progress: 98.67% ---> mrr: 0.5000 | ndcg: 0.5000 | keyword_coverage: 50.00 | Q: What is the total number of active contracts across all Insurellm products?
+🔁Progress: 99.33% ---> mrr: 0.7500 | ndcg: 0.8467 | keyword_coverage: 100.00 | Q: How many states does United Healthcare Alliance operate in according to their contract?
+🔁Progress: 100.00% ---> mrr: 1.0000 | ndcg: 1.0000 | keyword_coverage: 100.00 | Q: What is the longest contract duration among all Insurellm contracts?
