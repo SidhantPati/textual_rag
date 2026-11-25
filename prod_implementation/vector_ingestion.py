@@ -1,6 +1,9 @@
+import json
 import sqlite3
 
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
+from langchain_chroma import Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pathlib import Path
 
@@ -13,8 +16,11 @@ parent_records = [] # Store list of updated parent chunk information to be store
 child_records = [] # Store list of langchain_docs (i.e. child chunks) to be store in vector db
 
 text_embedding_model = "BAAI/bge-large-en-v1.5"
-vector_db_name = "PROD_child_chunks_vector_db"
-non_vector_db_name = "PROD_parent_records.sqlite3"
+database_dir = "databases" # New directory
+child_vector_db_name = "PROD_child_chunks_vector_db"
+child_vector_db_path = BASE_DIR / database_dir
+parent_non_vector_db_name = "PROD_parent_records.sqlite3"
+parent_non_vector_db_path = BASE_DIR / database_dir / parent_non_vector_db_name
 
 # ===========================================================================
 # Load Knowledge Base
@@ -75,5 +81,59 @@ for parent_index, parent_chunk in enumerate(parent_chunks):
 print(f"\n✅Success!! {len(child_chunks)} Child Chunks created")
 
 # ===========================================================================
-# Store Parent Records in Non-Vector DB and Child Chiunks in Vector DB
+# Store Child Chunks in Vector DB
 # ===========================================================================
+
+# Unique identifier for the vector db
+child_vector_db_ids = [f"{child_doc.metadata["parent_id"]}::{child_doc.metadata["child_index"]}" for child_doc in child_records]
+embeddings = HuggingFaceEmbeddings(
+    model_name = text_embedding_model
+)
+child_vector_store = Chroma.from_documents(
+    documents=child_chunks,
+    embedding=embeddings,
+    ids=child_vector_db_ids,
+    collection_name="child_chunks",
+    persist_directory=child_vector_db_path
+)
+print(f"\n✅Success!! Child Vector Store created and {len(child_chunks)} ingested")
+
+# ===========================================================================
+# Store Parent Chunks in Non-Vector DB (SQLite)
+# ===========================================================================
+parent_non_vector_db_path.parent.mkdir(parents=True, exist_ok=True)
+
+# DEFINE SQLite non-vector store for parent docs
+conn = sqlite3.connect(parent_non_vector_db_path)
+conn.execute("""
+    CREATE TABLE IF NOT EXISTS parent_documents (
+        parent_id TEXT PRIMARY KEY,
+        page_content TEXT NOT NULL,
+        metadata TEXT NOT NULL
+    )
+""")
+conn.commit()
+
+# Clear existing parent documents
+conn.execute("DELETE FROM parent_documents")
+conn.commit()
+
+# Insert newly generated parent documents
+conn.executemany(
+    """
+    INSERT INTO parent_documents
+    (parent_id, page_content, metadata)
+    VALUES (?, ?, ?)
+    """,
+    [
+        (
+            record["parent_id"],
+            record["page_content"],
+            json.dumps(record["metadata"])
+        )
+        for record in parent_records
+    ]
+)
+conn.commit()
+print(f"\n✅Success!! Parent SQLite Store created and {len(parent_records)} ingested")
+conn.close()
