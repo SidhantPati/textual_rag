@@ -18,6 +18,7 @@ child_records = [] # Store list of langchain_docs (i.e. child chunks) to be stor
 
 text_embedding_model = "BAAI/bge-large-en-v1.5"
 database_dir = "databases" # New directory
+database_dir_path = BASE_DIR / database_dir
 child_vector_db_name = "PROD_child_chunks_vector_db"
 child_vector_db_path = BASE_DIR / database_dir / child_vector_db_name
 parent_non_vector_db_name = "PROD_parent_records.sqlite3"
@@ -81,18 +82,21 @@ for parent_index, parent_chunk in enumerate(parent_chunks):
         child_chunk.metadata["parent_id"] = parent_id
         child_chunk.metadata["child_index"] = child_index
         child_records.append(child_chunk)
-print(f"\n✅Success!! {len(child_chunks)} Child Chunks created")
+print(f"\n✅Success!! {len(child_records)} Child Chunks created")
 
 # ===========================================================================
 # Store Child Chunks in Vector DB
 # ===========================================================================
+
+# Ensure the databases directory exists before either dbs are initialized
+database_dir_path.parent.mkdir(parents=True, exist_ok=True)
 
 if delete_existing_child_vector_store and child_vector_db_path.exists():
     print(f"🗑️ Removing existing database at: {child_vector_db_path}")
     shutil.rmtree(child_vector_db_path)
 print("⏳ Building new vector database...")
 # Unique identifier for the vector db
-child_vector_db_ids = [f"{child_doc.metadata["parent_id"]}::{child_doc.metadata["child_index"]}" for child_doc in child_records]
+child_vector_db_ids = [f"{child_doc.metadata['parent_id']}::{child_doc.metadata['child_index']}" for child_doc in child_records]
 embeddings = HuggingFaceEmbeddings(
     model_name = text_embedding_model
 )
@@ -101,14 +105,13 @@ child_vector_store = Chroma.from_documents(
     embedding=embeddings,
     ids=child_vector_db_ids,
     collection_name="child_chunks",
-    persist_directory=child_vector_db_path
+    persist_directory=str(child_vector_db_path)
 )
-print(f"\n✅Success!! Child Vector Store created and {len(child_chunks)} ingested")
+print(f"\n✅Success!! Child Vector Store created and {len(child_records)} ingested")
 
 # ===========================================================================
 # Store Parent Chunks in Non-Vector DB (SQLite)
 # ===========================================================================
-parent_non_vector_db_path.parent.mkdir(parents=True, exist_ok=True)
 
 # DEFINE SQLite non-vector store for parent docs
 conn = sqlite3.connect(parent_non_vector_db_path)
