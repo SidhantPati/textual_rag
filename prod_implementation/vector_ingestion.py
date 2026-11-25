@@ -18,7 +18,7 @@ child_records = [] # Store list of langchain_docs (i.e. child chunks) to be stor
 text_embedding_model = "BAAI/bge-large-en-v1.5"
 database_dir = "databases" # New directory
 child_vector_db_name = "PROD_child_chunks_vector_db"
-child_vector_db_path = BASE_DIR / database_dir
+child_vector_db_path = BASE_DIR / database_dir / child_vector_db_name
 parent_non_vector_db_name = "PROD_parent_records.sqlite3"
 parent_non_vector_db_path = BASE_DIR / database_dir / parent_non_vector_db_name
 
@@ -67,9 +67,9 @@ for parent_index, parent_chunk in enumerate(parent_chunks):
     parent_metadata["parent_id"] = parent_id
     parent_metadata["parent_index"] = parent_index
 
-    parent_records.apend({
+    parent_records.append({
         "parent_id":parent_id,
-        "content": parent_chunk.page_content,
+        "page_content": parent_chunk.page_content,
         "metadata":parent_metadata
     })
 
@@ -90,7 +90,7 @@ embeddings = HuggingFaceEmbeddings(
     model_name = text_embedding_model
 )
 child_vector_store = Chroma.from_documents(
-    documents=child_chunks,
+    documents=child_records,
     embedding=embeddings,
     ids=child_vector_db_ids,
     collection_name="child_chunks",
