@@ -57,7 +57,7 @@ print(f"\n✅Success!! {len(parent_chunks)} Parent Chunks created")
 # ===========================================================================
 # Child Chunking
 # ===========================================================================
-chlid_chunk_text_splitter = RecursiveCharacterTextSplitter(
+child_chunk_text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,
     chunk_overlap=100,
     add_start_index=True
@@ -77,7 +77,7 @@ for parent_index, parent_chunk in enumerate(parent_chunks):
         "metadata":parent_metadata
     })
 
-    child_chunks = chlid_chunk_text_splitter.split_documents([parent_chunk])
+    child_chunks = child_chunk_text_splitter.split_documents([parent_chunk])
     for child_index, child_chunk in enumerate(child_chunks):
         child_chunk.metadata["parent_id"] = parent_id
         child_chunk.metadata["child_index"] = child_index
@@ -89,7 +89,7 @@ print(f"\n✅Success!! {len(child_records)} Child Chunks created")
 # ===========================================================================
 
 # Ensure the databases directory exists before either dbs are initialized
-database_dir_path.parent.mkdir(parents=True, exist_ok=True)
+database_dir_path.mkdir(parents=True, exist_ok=True)
 
 if delete_existing_child_vector_store and child_vector_db_path.exists():
     print(f"🗑️ Removing existing database at: {child_vector_db_path}")
