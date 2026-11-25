@@ -1,4 +1,5 @@
 import json
+import shutil
 import sqlite3
 
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
@@ -21,6 +22,8 @@ child_vector_db_name = "PROD_child_chunks_vector_db"
 child_vector_db_path = BASE_DIR / database_dir / child_vector_db_name
 parent_non_vector_db_name = "PROD_parent_records.sqlite3"
 parent_non_vector_db_path = BASE_DIR / database_dir / parent_non_vector_db_name
+
+delete_existing_child_vector_store = True
 
 # ===========================================================================
 # Load Knowledge Base
@@ -84,6 +87,10 @@ print(f"\n✅Success!! {len(child_chunks)} Child Chunks created")
 # Store Child Chunks in Vector DB
 # ===========================================================================
 
+if delete_existing_child_vector_store and child_vector_db_path.exists():
+    print(f"🗑️ Removing existing database at: {child_vector_db_path}")
+    shutil.rmtree(child_vector_db_path)
+print("⏳ Building new vector database...")
 # Unique identifier for the vector db
 child_vector_db_ids = [f"{child_doc.metadata["parent_id"]}::{child_doc.metadata["child_index"]}" for child_doc in child_records]
 embeddings = HuggingFaceEmbeddings(
