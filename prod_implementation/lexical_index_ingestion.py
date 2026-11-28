@@ -39,5 +39,5 @@ def create_bm25_index(child_vector_store, bm25_index_path):
                 "bm25_documents":bm25_documents
             },
             file)
-    print(f"\n✅Success!! BM25 index saved to: {bm25_index_path}")
+
     return None
