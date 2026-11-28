@@ -12,7 +12,7 @@ def create_bm25_index(child_vector_store, bm25_index_path):
     LangChain Document	            ChromaDB .get()
     page_content	                documents
     metadata	                    metadatas
-    id (if assigned separately)	    ids
+    id (if assigned separately)	    ids (follows child_vector_db_ids provided during vector ingestion)
     """
     child_records = child_vector_store.get(
         include = ["documents","metadatas"]
@@ -21,7 +21,7 @@ def create_bm25_index(child_vector_store, bm25_index_path):
     bm25_documents = []
     for id, doc, metadata in zip(child_records["ids"],child_records["documents"],child_records["metadatas"]):
         metadata = dict(metadata or {})
-        metadata["child_id"] = id
+        metadata["child_id"] = id # Format (parent_id::child_index)
         bm25_documents.append(Document(
             page_content=doc,
             metadata=metadata

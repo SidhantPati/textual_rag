@@ -1,4 +1,6 @@
-import __main__
+import re
+import pickle
+
 from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
 import json
@@ -17,6 +19,7 @@ child_vector_db_name = "PROD_child_chunks_vector_db"
 child_vector_db_path = BASE_DIR / database_dir / child_vector_db_name
 parent_non_vector_db_name = "PROD_parent_records.sqlite3"
 parent_non_vector_db_path = BASE_DIR / database_dir / parent_non_vector_db_name
+bm25_index_path = BASE_DIR / database_dir / "PROD_bm25_index.pkl"
 
 # ===========================================================================
 # Variable Declaration
@@ -34,8 +37,45 @@ child_vector_store = Chroma(
 conn = sqlite3.connect(parent_non_vector_db_path)
 
 # ===========================================================================
+# BM25 Index Loading
+# ===========================================================================
+with open(bm25_index_path, "rb") as file:
+    bm25_data = pickle.load(file)
+
+bm25_index = bm25_data["bm25_index"]
+bm25_documents = bm25_data["bm25_documents"]
+
+# ===========================================================================
 # Helper Functions
 # ===========================================================================
+def get_child_id(doc: Document):
+    child_id = doc.metadata.get("child_id")
+    
+    # Typically BM25 Indexes will have child_id (i.e. parent_id::child_index)
+    if child_id:
+        return child_id
+    
+
+def tokenize_text(text: str) -> list[str]:
+    return re.findall(r"\b[\w-]+\b", text.lower())
+
+def bm25_index_retrieval(user_prompt: str, k: int):
+    tokenized_text = tokenize_text(user_prompt)
+    token_scores = bm25_index.get_scores(tokenized_text)
+    top_k_index = token_scores.argsort()[::-1][:k]
+    bm25_chunks = [bm25_documents[index] for index in top_k_index if token_scores[index] > 0]
+    return bm25_chunks
+
+def reciprocal_rank_fusion(semantic_results: list[Document], bm25_results: list[Document], rrf_k: int = 60):
+    retrieved_results = [semantic_results, bm25_results]
+    
+    fused_scores = {}
+    child_document_map = {}
+    for results in retrieved_results:
+        for rank, doc in enumerate(results, start=1):
+            child_id = get_child_id(doc)
+            rrf_k = 1 / (rrf_k + rank)
+
 def parent_child_retriever(user_prompt: str, child_k: int, parent_k: int):
     """
     user_prompt: query provided by the user
@@ -75,3 +115,4 @@ def parent_child_retriever(user_prompt: str, child_k: int, parent_k: int):
         if len(parent_records) == parent_k:
             break
     return parent_records
+
