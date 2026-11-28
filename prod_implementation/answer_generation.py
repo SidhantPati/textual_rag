@@ -78,10 +78,12 @@ def reciprocal_rank_fusion(semantic_results: list[Document], bm25_results: list[
         for rank, doc in enumerate(results, start=1):
             child_id = get_child_id(doc)
             rrf_k = 1 / (rrf_k + rank)
+
+            # fused_scores.get(child_id,0) --> If it exists, return its existing score or else 0
             fused_scores["child_id"] = (fused_scores.get(child_id,0) + rrf_k)
             child_document_map[child_id] = doc
     
-    # Sort child IDs based on their combined RRF scores
+    # Sort child IDs based on their combined RRF scores (i.e. fused scores)
     ranked_child_ids = sorted(
         fused_scores,
         key=lambda child_id: fused_scores[child_id],
@@ -99,13 +101,16 @@ def parent_child_retriever(user_prompt: str, child_k: int, parent_k: int):
     Output:
     Returns list of Top K (parent_k) parent records corresponding to k (child_k) child _chunks
     """
-    retrieved_child_chunks = child_vector_store.similarity_search(
-        query=user_prompt,
-        k=child_k)
+    # semantic search
+    retrieved_child_chunks = child_vector_store.similarity_search(query=user_prompt,k=child_k)
+    # BM25 search
+    bm25_results = bm25_index_retrieval(user_prompt=user_prompt,k=child_k)
+    # RRF implementation
+    fused_child_results = reciprocal_rank_fusion(retrieved_child_chunks, bm25_results, rrf_k = 60)
     
     # Extract unique parent IDs while preserving rank
     parent_ids = []
-    for child in retrieved_child_chunks:
+    for child in fused_child_results:
         parent_id = child.metadata.get("parent_id")
         if parent_id and parent_id not in parent_ids:
             parent_ids.append(parent_id)
