@@ -1,5 +1,6 @@
 import __main__
 from langchain_core.documents import Document
+from langchain_huggingface import HuggingFaceEmbeddings
 import json
 import sqlite3
 from langchain_chroma import Chroma
@@ -20,9 +21,13 @@ parent_non_vector_db_path = BASE_DIR / database_dir / parent_non_vector_db_name
 # ===========================================================================
 # Variable Declaration
 # ===========================================================================
+text_embedding_function = HuggingFaceEmbeddings(
+    model_name = text_embedding_model
+)
+
 child_vector_store = Chroma(
     persist_directory=str(child_vector_db_path),
-    embedding_function=text_embedding_model
+    embedding_function=text_embedding_function
 )
 
 conn = sqlite3.connect(parent_non_vector_db_path)
@@ -45,7 +50,7 @@ def parent_child_retriever(user_prompt: str, k: int):
             from parent_documents
             where parent_id = ?
             """,
-            (parent_id)
+            (parent_id,)
         ).fetchone()
 
         parent_records.append(Document(
@@ -53,3 +58,5 @@ def parent_child_retriever(user_prompt: str, k: int):
             metadata = json.loads(parent_metadata)
         ))
     return parent_records
+
+print(parent_child_retriever("When was Insurellm founded?",k=3))
