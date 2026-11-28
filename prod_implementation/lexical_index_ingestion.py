@@ -15,11 +15,11 @@ def create_bm25_index(child_vector_store, bm25_index_path):
     id (if assigned separately)	    ids
     """
     child_records = child_vector_store.get(
-        include = ["documents","metadata"]
+        include = ["documents","metadatas"]
     )
 
     bm25_documents = []
-    for id, doc, metadata in zip(child_records["ids"],child_records["documents"],child_records["metadata"]):
+    for id, doc, metadata in zip(child_records["ids"],child_records["documents"],child_records["metadatas"]):
         metadata = dict(metadata or {})
         metadata["child_id"] = id
         bm25_documents.append(Document(
@@ -39,5 +39,5 @@ def create_bm25_index(child_vector_store, bm25_index_path):
                 "bm25_documents":bm25_documents
             },
             file)
-
+    print(f"\n✅Success!! BM25 index saved to: {bm25_index_path}")
     return None
