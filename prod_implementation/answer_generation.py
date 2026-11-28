@@ -43,7 +43,7 @@ def parent_child_retriever(user_prompt: str, k: int):
             """
             SELECT page_content, metadata
             from parent_documents
-            where page_id = ?
+            where parent_id = ?
             """,
             (parent_id)
         ).fetchone()
