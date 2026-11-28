@@ -59,7 +59,7 @@ def calculate_ndcg(keyword, retrieved_docs, k):
 
 def evaluate_retrieval(test: BaseModel, k: int = 3):
     # Retrieve all langchian docs based on the question
-    retrieved_docs = parent_child_retriever(test.question,k=3)
+    retrieved_docs = parent_child_retriever(test.question,child_k=10, parent_k=3)
     
     # calculate mrr
     mrr_score_list = [calculate_mrr(keyword, retrieved_docs, k) for keyword in test.keywords]

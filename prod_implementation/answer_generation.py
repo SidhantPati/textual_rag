@@ -36,12 +36,25 @@ conn = sqlite3.connect(parent_non_vector_db_path)
 # ===========================================================================
 # Helper Functions
 # ===========================================================================
-def parent_child_retriever(user_prompt: str, k: int):
+def parent_child_retriever(user_prompt: str, child_k: int, parent_k: int):
+    """
+    user_prompt: query provided by the user
+    child_k: Number of chunks to be extracted from Vector Store
+    parent_k: Fetch Top K number of unique parent_ids corresponding to the child_chunks extracted
+
+    Output:
+    Returns list of Top K (parent_k) parent records corresponding to k (child_k) child _chunks
+    """
     retrieved_child_chunks = child_vector_store.similarity_search(
         query=user_prompt,
-        k=k)
+        k=child_k)
     
-    parent_ids = list(set([child.metadata["parent_id"] for child in retrieved_child_chunks if child]))
+    # Extract unique parent IDs while preserving rank
+    parent_ids = []
+    for child in retrieved_child_chunks:
+        parent_id = child.metadata.get("parent_id")
+        if parent_id and parent_id not in parent_ids:
+            parent_ids.append(parent_id)
 
     parent_records = []
     for parent_id in parent_ids:
@@ -58,4 +71,7 @@ def parent_child_retriever(user_prompt: str, k: int):
             page_content=parent_page_content,
             metadata = json.loads(parent_metadata)
         ))
+
+        if len(parent_records) == parent_k:
+            break
     return parent_records
