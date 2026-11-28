@@ -27,7 +27,8 @@ text_embedding_function = HuggingFaceEmbeddings(
 
 child_vector_store = Chroma(
     persist_directory=str(child_vector_db_path),
-    embedding_function=text_embedding_function
+    embedding_function=text_embedding_function,
+    collection_name="child_chunks"
 )
 
 conn = sqlite3.connect(parent_non_vector_db_path)
@@ -58,5 +59,3 @@ def parent_child_retriever(user_prompt: str, k: int):
             metadata = json.loads(parent_metadata)
         ))
     return parent_records
-
-print(parent_child_retriever("When was Insurellm founded?",k=3))
