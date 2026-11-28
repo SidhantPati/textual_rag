@@ -54,6 +54,9 @@ def get_child_id(doc: Document):
     # Typically BM25 Indexes will have child_id (i.e. parent_id::child_index)
     if child_id:
         return child_id
+    else:
+    # Typically Semantic Searches will not have child_id. So we create new parent_id::child_index
+        return f"{doc.metadata.get("parent_id")}::{doc.metadata.get("child_index")}"
     
 
 def tokenize_text(text: str) -> list[str]:
@@ -75,6 +78,17 @@ def reciprocal_rank_fusion(semantic_results: list[Document], bm25_results: list[
         for rank, doc in enumerate(results, start=1):
             child_id = get_child_id(doc)
             rrf_k = 1 / (rrf_k + rank)
+            fused_scores["child_id"] = (fused_scores.get(child_id,0) + rrf_k)
+            child_document_map[child_id] = doc
+    
+    # Sort child IDs based on their combined RRF scores
+    ranked_child_ids = sorted(
+        fused_scores,
+        key=lambda child_id: fused_scores[child_id],
+        reverse=True
+    )
+    fused_results = [child_document_map[child_id] for child_id in ranked_child_ids]
+    return fused_results
 
 def parent_child_retriever(user_prompt: str, child_k: int, parent_k: int):
     """
